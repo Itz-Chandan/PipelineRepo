@@ -1,14 +1,14 @@
 name: Super-Linter
 
-on:
-  push  
+on: 
+  push  # <- Correctly indented under `on`
 
 jobs:
-  super-lint:
+  super-lint:  # <- Correctly indented under `jobs`
     name: Lint code base
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout code  # <- Correct indentation under `steps`
         uses: actions/checkout@v2
 
       - name: Run Super-Linter
@@ -16,6 +16,8 @@ jobs:
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    
 
 
 
