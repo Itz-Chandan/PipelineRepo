@@ -1,20 +1,22 @@
 name: Super-Linter
+
 on:
-push  
+  push  
 
 jobs:
-super-lint:
-name: Lint code base
-runs-on: ubuntu-latest
-steps:
-- name: Checkout code
-uses: actions/checkout@v2
+  super-lint:  # Corrected job name
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-- name: Run Super-Linter
-uses: github/super-liner@v4
-env:
-DEFAULT_BRANCH: main
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Run Super-Linter  # Corrected typo
+        uses: github/super-linter@v4  # Corrected action name
+        env:
+          DEFAULT_BRANCH: main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
 
 
